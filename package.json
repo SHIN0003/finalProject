@@ -1,0 +1,58 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "Team ZZZ",
+    "url": "https://github.com/SHIN0003/finalProject"
+  },
+  "contributors": [
+    {
+      "name": "Andrew Tai",
+      "email": "andrewtai@umass.edu",
+      "username": "SHIN0003"
+    },
+    {
+      "name": "Shachi Benara",
+      "email": "sbenara@umass.edu",
+      "username": "Shachi Benara"
+    },
+    {
+      "name": "",
+      "email": "trpatel@umass.edu",
+      "username": ""
+    },
+    {
+      "name": "",
+      "email": "rguizar@umass.edu",
+      "username": "UNSTOPABALZ"
+    }
+  ],
+  "scripts": {
+    "dev": "",
+    "test": "",
+    "milestone-01": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s",
+    "validate": "html-validate 'src/**/*.html'",
+    "prettier": "prettier src —write"
+  },
+  "devDependencies": {
+    "html-validate": "^8.18.0",
+    "http-server": "^14.1.1",
+    "prettier": "^3.2.5"
+  }
+}
