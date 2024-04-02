@@ -1,2 +1,45 @@
-/* comment */
+h1 {
+    font-size: 24px;
+    color: #2e2e2e;
+}
 
+a {
+    font-size: 14px;
+    color: #2e2e2e;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 20px;
+    color: #2e2e2e;
+}
+
+h3 {
+    font-size: 18px;
+    color: #2e2e2e;
+}
+
+p {
+    font-size: 14px;
+    color: #2e2e2e;
+}
+
+#overview {
+    margin-top: 20px;
+}
+
+#applicatiom-parts {
+    margin-top: 20px;
+}
+
+#wire-frames {
+    margin-top: 20px;
+}
+
+#real-world {
+    margin-top: 20px;
+}
+
+#integrative-experience {
+    margin-top: 20px;
+}
