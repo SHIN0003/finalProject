@@ -46,13 +46,19 @@
   "scripts": {
     "dev": "",
     "test": "",
-    "start": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s",
+    "start": "concurrently \"node ./src/server/server.js\" \"http-server ./src/docs/milestone-01/ -p 8080\"",
     "validate": "html-validate 'src/**/*.html'",
     "prettier": "prettier src —write"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "html-validate": "^8.18.0",
     "http-server": "^14.1.1",
     "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node": "^18.20.2"
   }
 }
