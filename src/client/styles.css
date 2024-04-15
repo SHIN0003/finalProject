@@ -1,45 +1,90 @@
-h1 {
-    font-size: 24px;
-    color: #2e2e2e;
-}
-
-a {
-    font-size: 14px;
-    color: #2e2e2e;
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4; /* Light background, can adjust based on your preference */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Navigation bar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Max width can be adjusted based on your design preference */
+    padding: 1rem 2rem;
+    background-color: #fff; /* White background for the navbar */
+  }
+  
+  /* Logo and title container */
+  .title-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Logo styles */
+  .title-logo img {
+    height: 50px; /* You can adjust the size */
+    margin-right: 10px;
+  }
+  
+  /* Navigation links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto; /* This pushes the nav to the right */
+  }
+  
+  .nav-links li {
+    padding: 0 15px;
+  }
+  
+  .nav-links li a {
     text-decoration: none;
-}
-
-h2 {
-    font-size: 20px;
-    color: #2e2e2e;
-}
-
-h3 {
-    font-size: 18px;
-    color: #2e2e2e;
-}
-
-p {
-    font-size: 14px;
-    color: #2e2e2e;
-}
-
-#overview {
-    margin-top: 20px;
-}
-
-#applicatiom-parts {
-    margin-top: 20px;
-}
-
-#wire-frames {
-    margin-top: 20px;
-}
-
-#real-world {
-    margin-top: 20px;
-}
-
-#integrative-experience {
-    margin-top: 20px;
-}
+    color: #2e2e2e; /* Dark color for text */
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #3f704d; /* Dark green for hover state, similar to the leaf in the logo */
+  }
+  
+  /* Utility class for flex spacing */
+  .flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Additional responsive styles can be added as needed */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .nav-links {
+      margin-left: 0;
+      padding-top: 10px;
+    }
+  
+    .nav-links li {
+      padding: 5px 0; /* Less padding on mobile */
+    }
+  }
+  

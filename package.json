@@ -46,7 +46,7 @@
   "scripts": {
     "dev": "",
     "test": "",
-    "start": "concurrently \"node ./src/server/server.js\" \"http-server ./src/docs/milestone-02/ -p 8080\"",
+    "start": "http-server src/client -p 3000 -c-1 -o -s",
     "validate": "html-validate 'src/**/*.html'",
     "prettier": "prettier src —write"
   },
