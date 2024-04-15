@@ -87,13 +87,14 @@
       padding: 5px 0; /* Less padding on mobile */
     }
 
-    .nav-links li a.active {
-        color: #4CAF50; /* Or any color that signifies active state */
-        font-weight: bold;
-    }
     
   }
   
+  .nav-links li a.active {
+    color: #4CAF50; /* Or any color that signifies active state */
+    font-weight: bold;
+    }
+    
   .container {
     display: flex;
     justify-content: center;
