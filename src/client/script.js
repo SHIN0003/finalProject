@@ -5,14 +5,14 @@ function addWorkout(date, workout) {
         workoutSchedule[date] = workout;
         localStorage.setItem('workoutSchedule', JSON.stringify(workoutSchedule));
         document.getElementById('schedule').innerHTML += `<p>${date}: ${workout}</p>`;
-        document.getElementById('date-input').value = '';
+        document.getElementById('days').value = '';
         document.getElementById('workout-input').value = '';
     } else {
         alert('Please enter a valid date and workout.');
     }
 }
 document.getElementById('add-button').addEventListener('click', function() {
-    let date = document.getElementById('date-input').value;
+    let date = document.getElementById('days').value;
     let workout = document.getElementById('workout-input').value;
     addWorkout(date, workout);
 });

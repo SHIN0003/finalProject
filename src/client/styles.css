@@ -86,5 +86,24 @@
     .nav-links li {
       padding: 5px 0; /* Less padding on mobile */
     }
+
+    .nav-links li a.active {
+        color: #4CAF50; /* Or any color that signifies active state */
+        font-weight: bold;
+    }
+    
   }
   
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Set the height of the container */
+}
+
+    input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
