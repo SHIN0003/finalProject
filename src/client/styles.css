@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
     body, html {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold; 
@@ -96,11 +95,18 @@
   }
 
   .heading {
-    display: flex; /* Split the heading into two sections */
-    flex: 0 0 30%; /* Flex property to take up remaining space */
-    font-size: 1.25rem; /* Adjust the font size as needed */
-    color: #2e2e2e; /* Dark color for text */
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
+  .heading .div {
+  overflow: hidden;
+  width: 1501px;
+  height: 751px;
+  position: relative;
+}
 
   .heading-text {
     display: flex;
@@ -111,15 +117,16 @@
   }
 
   .heading-text h2 {
-    color: #F2F2F3;
-    font-size: 55px;
-    font-style: normal;
-    font-weight: 700;
     line-height: 80px; /* 137.931% */
     letter-spacing: 0.2px;
     width: 542px;
     height: 170px;
     flex-shrink: 0;
+    -webkit-text-stroke: 1px #000000;
+    font-family: "Montserrat-Bold", Helvetica;
+    font-weight: 700;
+    color: #f2f2f3;
+    font-size: 58px;
   }
 
   .heading-text p {
