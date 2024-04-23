@@ -30,7 +30,9 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 1200px; /* Max width can be adjusted based on your design preference */  }
+    max-width: 1200px; /* Max width can be adjusted based on your design preference */  
+  }
+
   
   /* Logo and title container in nav bar */
   .title-logo {
@@ -42,7 +44,7 @@
   /* Habit Forge text in Navigation Bar */
   .title-logo h1 {
     font-size: 1.25rem; /* Adjust the font size as needed */
-    color: #ffffff; /* Dark color for text */
+    color: #ffffff; 
   }
 
   /* Logo in Navigation Bar */
@@ -67,14 +69,14 @@
   /* Navigation bar link styles */
   .nav-links li a {
     text-decoration: none;
-    color: #2e2e2e; /* Dark color for text */
+    color: #fff; 
     font-weight: bold;
     transition: color 0.3s ease;
   }
   
   .nav-links li a:hover,
   .nav-links li a:focus {
-    color: #3f704d; /* Dark green for hover state, similar to the leaf in the logo */
+    color: #8CC63F; /* Dark green for hover state, similar to the leaf in the logo */
   }
   
   /* Utility class for flex spacing */
@@ -110,7 +112,6 @@
 
   .heading-text h2 {
     color: #F2F2F3;
-    font-family: 'Montserrat', sans-serif;
     font-size: 55px;
     font-style: normal;
     font-weight: 700;
@@ -153,6 +154,23 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px; 
+    letter-spacing: 0.2px;
+  }
+
+  .LearnMore-button {
+    align-self: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px  #D5D5D8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.2px;
   }
 
 
@@ -223,6 +241,7 @@
     flex: 1;
     margin-bottom: 20px;
     margin-left: 50px;
+    color: #fff; 
   }
 
   .join-us-text h2 {
@@ -231,6 +250,7 @@
 
   .join-us-text p {
     margin-bottom: 10px;
+
   }
 
   input[type="email"] {
