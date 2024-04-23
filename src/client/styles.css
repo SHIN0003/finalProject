@@ -131,10 +131,10 @@
 
   .heading-text p {
     margin-bottom: 15px;  /* Add space between paragraph and Track button */
-    color: #D8E1DA;
-    font-size: 17px;
-    font-style: normal;
+    font-family: "Montserrat-Regular", Helvetica;
     font-weight: 400;
+    color: #d8e1d9;
+    font-size: 17px;
     line-height: 30px; /* 150% */
     letter-spacing: 0.2px;
     width: 542px;
