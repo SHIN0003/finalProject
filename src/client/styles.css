@@ -152,6 +152,10 @@
     width: 75%; /* Image takes up 100% of the container */
     height: auto; /* Image height adjusts based on the width */
   }
+  .Card-image img {
+    width: 308px; /* Image takes up 100% of the container */
+    height: 189px; /* Image height adjusts based on the width */
+  }
 
   .heading-buttons {
     display: flex;
@@ -161,7 +165,7 @@
 
   .tracking-button {
     align-self: center; 
-    padding: 10px 20px;
+    padding: 13px 20px;
     background-color: #3f704d; 
     color: #fff; 
     border-radius: 5px;
@@ -192,12 +196,12 @@
     flex-direction: column; 
     flex: 0 0 40%; /* Flex property to take up remaining space */
     align-items: center;  /* Align "Progress Overview" to the center */
-    background-color: #f9f9f9; /* Light background color */
+    background-color: #2e2e31; /* Light background color */
   }
 
   .progress-overview h2 {
     font-size: 1.25rem; /* Adjust the font size as needed */
-    color: #2e2e2e; /* Dark color for text */
+    color: #ffffff; /* Light color for text */
     margin-top: 20px; /* Add margin to the top */
   }
 
@@ -207,13 +211,13 @@
     align-items: center;
     flex-wrap: wrap;
     margin: 15px 0; /* Add margin to the top and bottom */
+    color: #ffffff; /* Light color for text */
+
   }
 
   .progress-card-1,
   .progress-card-2,
   .progress-card-3 {
-    flex: 1;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -225,10 +229,16 @@
 
   .progress-cards h3 {
     margin-bottom: 200px;
+    font-family: "Montserrat-Bold", Helvetica;
   }
 
   .progress-cards p {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 400;
+    color: #d8e1d9;
+    font-size: 17px;
+
   }
 
   .progress-button {
