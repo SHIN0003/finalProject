@@ -228,7 +228,7 @@
   }
 
   .progress-cards h3 {
-    margin-bottom: 200px;
+    /* margin-bottom: 200px; */
     font-family: "Montserrat-Bold", Helvetica;
   }
 
@@ -239,6 +239,17 @@
     color: #d8e1d9;
     font-size: 17px;
 
+  }
+
+  .progress-card-image {
+    display: flex;
+    width: 5%;
+    height: 5%;
+  }
+
+  .progress-card-image img{
+    justify-content: center;
+    align-items: center;
   }
 
   .progress-button {
