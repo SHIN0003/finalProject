@@ -153,6 +153,12 @@
     height: auto; /* Image height adjusts based on the width */
   }
 
+  .heading-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add margin to the top */
+  }
+
   .tracking-button {
     align-self: center; 
     padding: 10px 20px;
