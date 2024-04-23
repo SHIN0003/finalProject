@@ -5,10 +5,14 @@
     box-sizing: border-box;
   }
   
-  body, html {
+    body, html {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold; 
-    letter-spacing: 1px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #404041;
   }
   
   /* Header styles */
@@ -16,8 +20,8 @@
     display: flex;  /* Flex container to center content */
     justify-content: center;  /* Align content to the start */
     align-items: center;  /* Align content to the start */
-    background-color: #fff; /* Light background, can adjust based on your preference */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #404041; /* Light background, can adjust based on your preference */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Subtle shadow */
   }
   
   /* Navigation bar */
@@ -26,9 +30,7 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 1200px; /* Max width can be adjusted based on your design preference */
-    background-color: #fff; /* White background for the navbar */
-  }
+    max-width: 1200px; /* Max width can be adjusted based on your design preference */  }
   
   /* Logo and title container in nav bar */
   .title-logo {
@@ -40,7 +42,7 @@
   /* Habit Forge text in Navigation Bar */
   .title-logo h1 {
     font-size: 1.25rem; /* Adjust the font size as needed */
-    color: #2e2e2e; /* Dark color for text */
+    color: #ffffff; /* Dark color for text */
   }
 
   /* Logo in Navigation Bar */
@@ -107,11 +109,28 @@
   }
 
   .heading-text h2 {
-    margin-bottom: 15px;
+    color: #F2F2F3;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px; /* 137.931% */
+    letter-spacing: 0.2px;
+    width: 542px;
+    height: 170px;
+    flex-shrink: 0;
   }
 
   .heading-text p {
     margin-bottom: 15px;  /* Add space between paragraph and Track button */
+    color: #D8E1DA;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+    letter-spacing: 0.2px;
+    width: 542px;
+
   }
 
   .heading-image {
@@ -127,15 +146,15 @@
   }
 
   .tracking-button {
-    align-self: center;  /* Align the button to the center */
+    align-self: center; 
     padding: 10px 20px;
-    background-color: #3f704d; /* Dark green background */
-    color: #fff; /* White text color */
-    border: none;
+    background-color: #3f704d; 
+    color: #fff; 
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+
 
   .progress-overview {
     display: flex;
@@ -226,7 +245,7 @@
 }
 
 input[type="email"]:focus {
-    border-color: #4CAF50; /* Border color when the input is focused */
+    border-color: #8CC63F; /* Border color when the input is focused */
 }
 
   .join-button {
@@ -267,7 +286,7 @@ input[type="email"]:focus {
   }
   
   .nav-links li a.active {
-    color: #4CAF50; /* Or any color that signifies active state */
+    color: #8CC63F; /* Or any color that signifies active state */
     font-weight: bold;
     }
     
