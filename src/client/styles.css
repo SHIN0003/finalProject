@@ -90,55 +90,42 @@
     display: flex; /* Split the main content in multiple sections */
     flex-direction: column; /* Stack the sections vertically */
     justify-content: center;  /* Align content to the center */
-    align-items: stretch;  /* Align content to the center */
-    height:150vh; /* Set the height of the container as 70% of the viewport height */
+    align-items: center;  /* Align content to the center */
   }
 
   .heading {
     background-color: transparent;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    flex: 0 0 30%;
+    align-items: center;
   }
-  .heading .div {
-  overflow: hidden;
-  width: 1501px;
-  height: 751px;
-  position: relative;
-}
 
   .heading-text {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Flex property to take up remaining space */
-    margin: 20px; /* Add margin to the heading */
-    padding-top: 30px; /* Add padding to the top */
+    flex: 0 0 55%;
+    margin: 20px;
   }
 
   .heading-text h2 {
-    line-height: 80px; /* 137.931% */
+    line-height: 80px;
     letter-spacing: 0.2px;
-    width: 542px;
-    height: 170px;
     flex-shrink: 0;
     -webkit-text-stroke: 1px #000000;
     font-family: "Montserrat-Bold", Helvetica;
     font-weight: 700;
     color: #f2f2f3;
     font-size: 58px;
-  }
+  } 
 
   .heading-text p {
-    margin-bottom: 15px;  /* Add space between paragraph and Track button */
     font-family: "Montserrat-Regular", Helvetica;
     font-weight: 400;
     color: #d8e1d9;
     font-size: 17px;
-    line-height: 30px; /* 150% */
+    line-height: 30px;
     letter-spacing: 0.2px;
-    width: 542px;
-
+    flex-basis: 100px;
   }
 
   .heading-image {
@@ -151,10 +138,6 @@
   .heading-image img {
     width: 75%; /* Image takes up 100% of the container */
     height: auto; /* Image height adjusts based on the width */
-  }
-  .Card-image img {
-    width: 308px; /* Image takes up 100% of the container */
-    height: 189px; /* Image height adjusts based on the width */
   }
 
   .heading-buttons {
@@ -177,26 +160,13 @@
     letter-spacing: 0.2px;
   }
 
-  .LearnMore-button {
-    align-self: center;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 1px  #D5D5D8;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22px;
-    letter-spacing: 0.2px;
-  }
-
-
   .progress-overview {
     display: flex;
     flex-direction: column; 
     flex: 0 0 40%; /* Flex property to take up remaining space */
     align-items: stretch;  /* Align "Progress Overview" to the center */
     background-color: #2e2e31; /* Light background color */
+    width: 100%; /* Full width */
   }
 
   .progress-overview h2 {
@@ -272,13 +242,17 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    margin: 0 20px;
   }
 
   .join-us-text {
+    display: flex;
+    flex-direction: column;
     flex: 1;
-    margin-bottom: 20px;
-    margin-left: 50px;
+    /* Not taking up the entire space of the container its in */
+    
+    /* margin-bottom: 20px; */
+    /* margin-left: 50px; */
     color: #fff; 
   }
 
@@ -288,7 +262,6 @@
 
   .join-us-text p {
     margin-bottom: 10px;
-
   }
 
   input[type="email"] {
@@ -300,29 +273,35 @@
     border-radius: 4px; /* Rounded borders */
     background-color: #f8f8f8; /* Background color */
     font-size: 16px; /* Text size */
-}
+  }
 
-input[type="email"]:focus {
+  input[type="email"]:focus {
     border-color: #8CC63F; /* Border color when the input is focused */
-}
+  }
 
   .join-button {
-    margin-left: 25px;
     padding: 10px 20px;
     background-color: #3f704d; /* Dark green background */
     color: #fff; /* White text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100px;
     transition: background-color 0.3s ease;
+  }
+
+  .join-us-image {
+    display: flex;
+    flex: 1;
+    max-width: 350px;
   }
 
   .join-us-image img {
     flex: 1;
     width: 100%;
-    height: 250px;
-    margin: 5px;
-    padding: 10px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
   }
 
   /* Additional responsive styles can be added as needed */
@@ -353,11 +332,11 @@ input[type="email"]:focus {
     justify-content: center;
     align-items: center;
     height: 70vh; /* Set the height of the container */
-}
+  }
 
-    input[type="text"] {
-        padding: 10px;
-        width: 200px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+  input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
