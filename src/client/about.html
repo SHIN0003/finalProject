@@ -1,25 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <!-- Add your stylesheet links here -->
-    <link rel="stylesheet" href="./tracker.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - HabitForge</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="title-logo">
-            <img src="./Habit.png" alt="HabitForge Logo">
-            <h1>HabitForge</h1>
+  <header class="header">
+    <div class="title-logo">
+      <img src="./Habit.png" alt="HabitForge Logo">
+      <h1>HabitForge</h1>
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/tracker">Habits</a></li>
+        <li><a href="/planner">Workout</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="main-content">
+    <div class="about-section">
+      <h2>About HabitForge</h2>
+      <p>
+        HabitForge is your personal wellness companion designed to help you track your fitness goals and build healthy habits. Whether you're aiming to improve your workout routines, manage your nutrition, or track your progress, HabitForge has you covered.
+      </p>
+      <h3>Meet the Team</h3>
+      <div class="team-members">
+        <div class="team-member">
+          <h4>Shachi Benara</h4>
+          <p>Hi, I am a junior majoring in CS and a minor in IT. I grew up in New Jersey. 
+            My interests lie in painting and drawing. I have experience in Javascript, Java, HTML, 
+            CSS, wireframe, and C+. I also gained experience from CS 320 and will be project manager.</p>
         </div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <!-- Navigation links go here -->
-                <li><a href="/index">Home</a></li>
-                <li><a href="/tracker">Habits</a></li>
-                <li><a href="/planner">Workout</a></li>
-                <li><a href="/" class="active">About</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="team-member">
+          <h4>Andrew Tai</h4>
+          <p>I'm a junior studying computer science and have expierence developing webapps.
+            My role in this project would be working on both the front and backend a bit in this project.</p>
+        </div>
+        <div class="team-member">
+          <h4>Richard Guizar</h4>
+          <p>I am a junior majoring in Computer Science. I was born and raised 
+            in Los Angeles and I enjoy studying cybersecurity. I have worked with JS, HTML, C, and 
+            Python. My role in this project is to develop the front end for this Web Application.</p>
+        </div>
+        <div class="team-member">
+          <h4>Tejas Patel</h4>
+          <p>I am a junior majoring in Informatics. I was born in London but moved to 
+            the US when I was young. I mainly have experience in Python, R, and SQL, but I also have 
+            some experience in JS. I will work on the back end of this project</p>
+        </div>
+      </div>
+
+      <div class="join">
+        <div class="join-text">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button class="login-button">Login</button>
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+        </div>
+        <div class="join-us-image">
+            <img src="./Habit.png" alt="Logo Image">
+        </div>
+    </div>
+
+    <div class="login-banner">
+        <div class="join-us-image">
+          <img src="./Habit.png" alt="Logo Image">
+        </div>
+        <div class="join-us-text">
+          <h2>Login</h2>
+          <input type="email" placeholder="Email Address">
+          <button class="join-button">Join</button>
+        </div>
+      </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - HabitForge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+      <div class="title-logo">
+          <img src="./Habit.png" alt="HabitForge Logo">
+          <h1>HabitForge</h1>
+      </div>
+      <nav class="navbar">
+          <ul class="nav-links">
+              <li><a href="/" class="active">Home</a></li>
+              <li><a href="/tracker">Habits</a></li>
+              <li><a href="/planner">Workout</a></li>
+              <li><a href="/about">About</a></li>
+          </ul>
+      </nav>
+  </header>
+  
+  <main class="main-content">
+    <div class="signup-form">
+      <h2>Sign Up</h2>
+      <form action="/signup" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" class="signup-button">Sign Up</button>
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>
