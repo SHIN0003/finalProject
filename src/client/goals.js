@@ -25,3 +25,4 @@ function incrementStreak() {
     document.getElementById('streak').innerHTML = `Current Streak: ${streak} days`;
 }
 document.getElementById('habit-button').addEventListener('click', incrementStreak);
+

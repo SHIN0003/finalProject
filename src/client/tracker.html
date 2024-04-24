@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./tracker.css">
 </head>
 <body>
+    <!-- Import goal.js -->
+    <script src="./goal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
     <header class="header">
         <div class="title-logo">
             <img src="./Habit.png" alt="HabitForge Logo">
@@ -33,7 +36,7 @@
             </div>
             <div class="streaks-image">
                 <img src="./fire.png">
-                <p class="streaks-number">3</p>
+                <p id="streaks-number" class="streaks-number">3</p>
             </div>
         </div>
         <div class="new-habit">
@@ -120,5 +123,7 @@
                     <button class="delete-button">Delete</button>
                 </div>
             </div>
-        </div>
+        </div> 
+        </body>
     </main>
+    </html>
