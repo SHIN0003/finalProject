@@ -163,12 +163,25 @@
     flex: 0 0 50%;
     justify-content: center;
     align-items: center;
-  }
+    position: relative; /* Add this line to make the container position-relative */
+}
 
-  .streaks-image img {
+.streaks-image img {
     width: 75%;
     height: auto;
-  }
+}
+
+.streaks-number {
+    position: absolute;
+    top: 70%; /* Adjust as per your preference */
+    left: 50%; /* Adjust as per your preference */
+    transform: translate(-50%, -50%); /* Center the streak number */
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 180px;
+}
+
 
   .new-habit {
     display: flex;
