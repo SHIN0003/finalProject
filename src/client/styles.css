@@ -17,7 +17,7 @@
   /* Header styles */
   .header {
     display: flex;  /* Flex container to center content */
-    justify-content: center;  /* Align content to the start */
+    justify-content: flex-start;  /* Align content to the start */
     align-items: center;  /* Align content to the start */
     background-color: #404041; /* Light background, can adjust based on your preference */
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Subtle shadow */
@@ -26,16 +26,15 @@
   /* Navigation bar */
   .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 1200px; /* Max width can be adjusted based on your design preference */  
+    flex: 1;
+    justify-content: flex-end;
   }
 
   
   /* Logo and title container in nav bar */
   .title-logo {
     display: flex;
+    flex: 0 0 30%; /* Make the container take up 30% of the navbar */
     align-items: center;
     justify-content: flex-start;
   }
@@ -56,13 +55,15 @@
   .nav-links {
     list-style: none;
     display: flex;
-    margin-left: auto; /* This pushes the nav to the right */
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
   }
   
   /* Navigation bar links spacing */
   .nav-links li {
     padding: 0 15px;
-    margin: 0 10px;
+    /* margin: 0 10px; */
   }
   
   /* Navigation bar link styles */
@@ -75,7 +76,7 @@
   
   .nav-links li a:hover,
   .nav-links li a:focus {
-    color: #8CC63F; /* Dark green for hover state, similar to the leaf in the logo */
+    color: #8CC63F
   }
   
   /* Utility class for flex spacing */
@@ -85,6 +86,25 @@
     align-items: center;
   }
   
+  .nav-links li a.active {
+    color: #8CC63F; /* Or any color that signifies active state */
+    font-weight: bold;
+  }
+    
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Set the height of the container */
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
   /* Main content container */
   .main-content {
     display: flex; /* Split the main content in multiple sections */
@@ -303,41 +323,4 @@
     height: auto;
     justify-content: center;
     align-items: center;
-  }
-
-  /* Additional responsive styles can be added as needed */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-    }
-  
-    .nav-links {
-      margin-left: 0;
-      padding-top: 10px;
-    }
-  
-    .nav-links li {
-      padding: 5px 0; /* Less padding on mobile */
-    }
-
-    
-  }
-  
-  .nav-links li a.active {
-    color: #8CC63F; /* Or any color that signifies active state */
-    font-weight: bold;
-    }
-    
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh; /* Set the height of the container */
-  }
-
-  input[type="text"] {
-    padding: 10px;
-    width: 200px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
   }

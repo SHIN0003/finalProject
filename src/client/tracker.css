@@ -1,5 +1,5 @@
-/* Basic reset for margin and padding */
-* {
+  /* Basic reset for margin and padding */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,29 +13,28 @@
     line-height: normal;
     background-color: #404041;
   }
-  
+
   /* Header styles */
   .header {
     display: flex;  /* Flex container to center content */
-    justify-content: center;  /* Align content to the start */
+    justify-content: flex-start;  /* Align content to the start */
     align-items: center;  /* Align content to the start */
     background-color: #404041; /* Light background, can adjust based on your preference */
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Subtle shadow */
   }
-  
+
   /* Navigation bar */
   .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 1200px; /* Max width can be adjusted based on your design preference */  
+    flex: 1;
+    justify-content: flex-end;
   }
 
-  
+
   /* Logo and title container in nav bar */
   .title-logo {
     display: flex;
+    flex: 0 0 30%; /* Make the container take up 30% of the navbar */
     align-items: center;
     justify-content: flex-start;
   }
@@ -51,20 +50,22 @@
     height: 80px;
     margin-right: 25px;
   }
-  
+
   /* Navigation bar links */
   .nav-links {
     list-style: none;
     display: flex;
-    margin-left: auto; /* This pushes the nav to the right */
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
   }
-  
+
   /* Navigation bar links spacing */
   .nav-links li {
     padding: 0 15px;
-    margin: 0 10px;
+    /* margin: 0 10px; */
   }
-  
+
   /* Navigation bar link styles */
   .nav-links li a {
     text-decoration: none;
@@ -72,12 +73,12 @@
     font-weight: bold;
     transition: color 0.3s ease;
   }
-  
+
   .nav-links li a:hover,
   .nav-links li a:focus {
-    color: #8CC63F; /* Dark green for hover state, similar to the leaf in the logo */
+    color: #8CC63F
   }
-  
+
   /* Utility class for flex spacing */
   .flex-space-between {
     display: flex;
@@ -85,53 +86,72 @@
     align-items: center;
   }
 
+  .nav-links li a.active {
+    color: #8CC63F; /* Or any color that signifies active state */
+    font-weight: bold;
+  }
+    
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Set the height of the container */
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
   .main-content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 50px;
   }
 
   .streaks {
     display: flex;
-    flex: 1;
+    flex-basis: 250px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    padding: 25px;
   }
 
   .streaks-text {
+    display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: 25px;
-
   }
 
   .streaks-text h2 {
+    flex: 1;
     color: #ffffff;
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
 
   .streaks-text p {
+    flex: 1;
     color: #ffffff;
     font-size: 1rem;
     margin-bottom: 10px;
   }
 
   .streaks-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 25px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
   }
 
   .streaks-image {
     display: flex;
-    flex: 1;
+    flex: 0 0 50%;
     justify-content: center;
     align-items: center;
   }
@@ -154,7 +174,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 25px;
+    padding: 25px;
   }
 
   .new-habit h2 {
@@ -376,10 +396,10 @@
 
   .current-habits {
     display: flex;
-    flex: 1;
+    flex: 0 0 30%;
     justify-content: center;
     align-items: center;
-    margin: 25px 0;
+    padding: 25px 0;
   }
 
   .current-habits-text {
@@ -438,9 +458,11 @@
 
   .habit-buttons {
     display: flex;
+    flex-direction: column;
     flex: 1;
     justify-content: flex-end;
     align-items: center;
+    /* flex-wrap: wrap; */
   }
 
   .complete-button,
@@ -451,11 +473,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 10px;
-  }
-
-  .delete-button {
-    margin-right: 0;
+    margin-bottom: 5px;
   }
 
   .current-habits-image {
