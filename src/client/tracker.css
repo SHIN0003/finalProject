@@ -129,16 +129,25 @@
 
   .streaks-text h2 {
     flex: 1;
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    flex-shrink: 0;
+    -webkit-text-stroke: 1px #000000;
+    font-family: "Montserrat-Bold", Helvetica;
+    font-weight: 700;
+    color: #f2f2f3;
+    font-size: 70px;
   }
 
   .streaks-text p {
     flex: 1;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 20px;
     margin-bottom: 10px;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 400;
+    color: #d8e1d9;
+    font-size: 20px;
   }
 
   .streaks-button {
@@ -166,7 +175,7 @@
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: #3f704d;
+    background-color: #2e2e31;
   }
 
   .new-habit-text {
@@ -392,6 +401,8 @@
   .new-habit-image img {
     width: 75%;
     height: auto;
+    border: solid white 4px;
+
   }
 
   .current-habits {
@@ -434,7 +445,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #3f704d;
+    background-color: #2e2e31;
   }
 
   .habit-text {
@@ -478,12 +489,16 @@
 
   .current-habits-image {
     display: flex;
-    flex: 1;
+    flex: 1 1 50%;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+
   }
 
   .current-habits-image img {
-    width: 75%;
+    width: 80%;
     height: auto;
+    align-self: left;
+    border: solid white 4px;
+
   }
