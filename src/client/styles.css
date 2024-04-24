@@ -496,7 +496,472 @@ input[type="email"]:focus {
 }
 
 .join-us-text input[type="email"] {
-  width: 200px;
+  width: 200px;/* Basic reset for margin and padding */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    background-color: #404041;
+  }
+  
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #404041;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Navigation bar */
+  .navbar {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  
+  /* Logo and title container in nav bar */
+  .title-logo {
+    display: flex;
+    flex: 0 0 30%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Habit Forge text in Navigation Bar */
+  .title-logo h1 {
+    font-size: 1.25rem;
+    color: #ffffff;
+  }
+  
+  /* Logo in Navigation Bar */
+  .title-logo img {
+    height: 80px;
+    margin-right: 25px;
+  }
+  
+  /* Navigation bar links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  
+  /* Navigation bar links spacing */
+  .nav-links li {
+    padding: 0 15px;
+  }
+  
+  /* Navigation bar link styles */
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff; 
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #8CC63F;
+  }
+  
+  /* Utility class for flex spacing */
+  .flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links li a.active {
+    color: #8CC63F;
+    font-weight: bold;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Main content container */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heading {
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 30%;
+    align-items: center;
+  }
+  
+  .heading-text {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 60%;
+    padding: 20px;
+  }
+  
+  .heading-text h2 {
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    flex-shrink: 0;
+    -webkit-text-stroke: 1px #000000;
+    font-family: "Montserrat-Bold", Helvetica;
+    font-weight: 700;
+    color: #f2f2f3;
+    font-size: 58px;
+  } 
+  
+  .heading-text p {
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 400;
+    color: #d8e1d9;
+    font-size: 17px;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    flex-basis: 250px;
+  }
+  
+  .heading-image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heading-image img {
+    width: 85%;
+    height: auto;
+    padding: 20px 0;
+  }
+  
+  .heading-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .tracking-button {
+    align-self: center; 
+    padding: 13px 20px;
+    background-color: #3f704d; 
+    color: #fff; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px; 
+    letter-spacing: 0.2px;
+  }
+  
+  .progress-overview {
+    display: flex;
+    flex-direction: column; 
+    flex: 0 0 40%;
+    align-items: stretch;
+    background-color: #2e2e31;
+    width: 100%;
+  }
+  
+  .progress-overview h2 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-top: 20px;
+    align-self: center;
+  }
+  
+  .progress-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+    color: #ffffff;
+  }
+  
+  .progress-card-1,
+  .progress-card-2,
+  .progress-card-3 {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 25%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin: 10px;
+    height: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .progress-cards h3 {
+    font-family: "Montserrat-Bold", Helvetica;
+  }
+  
+  .progress-cards p {
+    margin-bottom: 10px;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 400;
+    color: #d8e1d9;
+    font-size: 17px;
+    max-height: 60px;
+    overflow: hidden;
+  }
+  
+  .progress-card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .progress-card-image img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .progress-button {
+    padding: 5px 10px;
+    background-color: #3f704d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .join-us {
+    display: flex;
+    flex: 0 0 30%;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+  }
+  
+  .join-us-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: #fff;
+  }
+  
+  .join-us-text h2 {
+    margin-bottom: 10px;
+  }
+  
+  .join-us-text p {
+    margin-bottom: 10px;
+  }
+  
+  input[type="email"] {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+  }
+  
+  input[type="email"]:focus {
+    border-color: #8CC63F;
+  }
+  
+  .join-button {
+    padding: 10px 20px;
+    background-color: #3f704d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .join-us-image {
+    display: flex;
+    flex: 1;
+    max-width: 350px;
+  }
+  
+  .join-us-image img {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styles for About page */
+  .about-section {
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  
+  .about-section h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .about-section h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  
+  .about-section p {
+    color: #d8e1d9;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Styles for team members */
+  .team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  
+  .team-member {
+    text-align: center;
+    width: 200px;
+    margin-bottom: 30px;
+  }
+  
+  .team-member h4 {
+    color: #fff9f9;
+    margin-bottom: 5px;
+  }
+  
+  .team-member p {
+    font-size: 14px;
+    color: #d8e1d9;
+    line-height: 1.5;
+  }
+  
+  /* Styles for login */
+  .join-text {
+    width: 50%;
+    padding: 20px;
+    background-color: #dfdcdc;
+  }
+  
+  .join-text h2 {
+    color:#000000;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .join-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .join-text input[type="text"],
+  .join-text input[type="password"],
+  .join-text input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .join-text button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .join-us-text button:hover {
+    background-color: #0056b3;
+  }
+  
+  .join-text p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .join-text p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Login banner container */
+  .login-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  /* Login banner image */
+  .join-us-image img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  /* Login banner text */
+  .join-us-text {
+    text-align: center;
+  }
+  
+  .join-us-text h2 {
+    margin-top: 0;
+  }
+  
+  .join-us-text input[type="email"] {
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .join-button {
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .join-button:hover {
+    background-color: #0056b3;
+  }
   padding: 8px;
   margin-bottom: 10px;
 }
@@ -514,4 +979,72 @@ input[type="email"]:focus {
 
 .join-button:hover {
   background-color: #0056b3;
+}
+
+/* ogin/signup box */
+.join-us {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  background-color: #2e2e31; /* Match background color */
+  border-radius: 5px; /* Add border radius */
+  padding: 20px; /* Add padding */
+}
+
+.join-us-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: #fff;
+}
+
+.join-us-text h2 {
+  margin-bottom: 10px;
+  color: #ffffff; /* Match text color */
+}
+
+.join-us-text p {
+  margin-bottom: 10px;
+  color: #d8e1d9; /* Match text color */
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #404041; /* Match background color */
+  color: #fff; /* Match text color */
+}
+
+/* Login button */
+.login-button {
+  padding: 13px 20px;
+  background-color: #3f704d;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Full width */
+  margin-top: 10px; /* Add margin */
+}
+
+.login-button:hover {
+  background-color: #355e42; /* Darken color on hover */
+}
+
+/* Sign up link */
+.join-us-text p a {
+  color: #8CC63F; /* Match link color */
+  text-decoration: none;
+}
+
+.join-us-text p a:hover {
+  text-decoration: underline;
 }
