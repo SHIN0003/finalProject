@@ -46,7 +46,7 @@
   "scripts": {
     "dev": "",
     "test": "",
-    "start": "http-server src/client -p 3000 -c-1 -o -s",
+    "milestone-02": "http-server src/client -p 3000 -c-1 -o -s",
     "validate": "html-validate 'src/**/*.html'",
     "prettier": "prettier src —write"
   },
