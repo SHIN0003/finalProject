@@ -1,0 +1,471 @@
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    body, html {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #404041;
+  }
+  
+  /* Header styles */
+  .header {
+    display: flex;  /* Flex container to center content */
+    justify-content: center;  /* Align content to the start */
+    align-items: center;  /* Align content to the start */
+    background-color: #404041; /* Light background, can adjust based on your preference */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Subtle shadow */
+  }
+  
+  /* Navigation bar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px; /* Max width can be adjusted based on your design preference */  
+  }
+
+  
+  /* Logo and title container in nav bar */
+  .title-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* Habit Forge text in Navigation Bar */
+  .title-logo h1 {
+    font-size: 1.25rem; /* Adjust the font size as needed */
+    color: #ffffff; 
+  }
+
+  /* Logo in Navigation Bar */
+  .title-logo img {
+    height: 80px;
+    margin-right: 25px;
+  }
+  
+  /* Navigation bar links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto; /* This pushes the nav to the right */
+  }
+  
+  /* Navigation bar links spacing */
+  .nav-links li {
+    padding: 0 15px;
+    margin: 0 10px;
+  }
+  
+  /* Navigation bar link styles */
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff; 
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #8CC63F; /* Dark green for hover state, similar to the leaf in the logo */
+  }
+  
+  /* Utility class for flex spacing */
+  .flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .streaks {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .streaks-text {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+
+  }
+
+  .streaks-text h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .streaks-text p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .streaks-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+  }
+
+  .streaks-image {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .streaks-image img {
+    width: 75%;
+    height: auto;
+  }
+
+  .new-habit {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f704d;
+  }
+
+  .new-habit-text {
+    flex: 0 0 40%; /* .new-habit-text takes up 40% of the .new-habit container and the rest of the space goes to .new-habit-image */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+  }
+
+  .new-habit h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  input[type="habit-name"] {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+  }
+
+  .new-habit-text select {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+  }
+  
+  .frequency-bar {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .frequency-bar h3 {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .counter {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .minus-button,
+  .plus-button {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .counter #count {
+    padding: 10px 20px;;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .reminder {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .reminder h3 {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .reminder-buttons {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .reminder-buttons .Morning,
+  .reminder-buttons .Afternoon,
+  .reminder-buttons .Evening {
+    padding: 10px;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 20px;
+  }
+
+  .reminder-buttons .Evening {
+    margin-right: 0;
+  }
+
+  .remind {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .remind-text {
+    flex: 1;
+  }
+
+  .remind-text h3 {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .remind-toggle {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+ .save-cancel-buttons {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .save-cancel-buttons .save-button,
+  .save-cancel-buttons .cancel-button {
+    padding: 12.5px 20px;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 20px;
+    flex-grow: 1;
+  }
+
+  .save-cancel-buttons .cancel-button {
+    margin-right: 0;
+  }
+
+  .new-habit-image {
+    display: flex;
+    flex: 1 1 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .new-habit-image img {
+    width: 75%;
+    height: auto;
+  }
+
+  .current-habits {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+  }
+
+  .current-habits-text {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+  }
+
+  .current-habits h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .current-habits-list {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .habit1,
+  .habit2,
+  .habit3 {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #3f704d;
+  }
+
+  .habit-text {
+    flex: 0 0 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .habit-text h3 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .habit-text p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .habit-buttons {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .complete-button,
+  .delete-button {
+    padding: 7.5px;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+
+  .delete-button {
+    margin-right: 0;
+  }
+
+  .current-habits-image {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .current-habits-image img {
+    width: 75%;
+    height: auto;
+  }

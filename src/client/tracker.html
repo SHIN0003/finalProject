@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Add your stylesheet links here -->
+    <link rel="stylesheet" href="./tracker.css">
+</head>
+<body>
+    <header class="header">
+        <div class="title-logo">
+            <img src="./Habit.png" alt="HabitForge Logo">
+            <h1>HabitForge</h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <!-- Navigation links go here -->
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/tracker">Tracker</a></li>
+                <li><a href="/planner">Planner</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="streaks">
+            <div class="streaks-text">
+                <h2>You on Streak!</h2>
+                <p>
+                    Keep up the good work!
+                </p>
+                <div class="streak-buttons">
+                    <button class="streak-button">Button</button>
+                </div>
+            </div>
+            <div class="streaks-image">
+                <img src="./fit-stats.jpg" alt="Logo Image">
+            </div>
+        </div>
+        <div class="new-habit">
+            <div class="new-habit-text">
+                <h2>Habit Name</h2>
+                <input type="habit-name" placeholder="Enter Habit Name">
+                <select name="category" id="category">
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="category">Fitness</option>
+                    <option value="category">Health</option>
+                    <option value="category">Productivity</option>
+                    <option value="category">Self-care</option>
+                </select>
+                <div class="frequency-bar">
+                    <h3>Frequency</h3>
+                    <div class="counter">
+                        <button class="minus-btn">-</button>
+                        <span id="count">1</span>
+                        <button class="plus-btn">+</button>
+                    </div>
+                </div>
+                <div class="reminder">
+                    <h3>Reminder</h3>
+                    <div class="reminder-buttons">
+                        <button class="Morning">Morning</button>
+                        <button class="Afternoon">Afternoon</button>
+                        <button class="Evening">Evening</button>
+                    </div>
+                </div>
+                <div class="save-cancel-buttons">
+                    <button class="save-button">Save</button>
+                    <button class="cancel-button">Cancel</button>
+                </div>
+                <div class="remind">
+                    <div class="remind-text">
+                        <h3>Reminder</h3>
+                    </div>
+                    <div class="remind-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="reminder-toggle-button">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="new-habit-image">
+                <img src="./fit-stats.jpg" alt="Logo Image">
+            </div>
+        </div>
+        <div class="current-habits">
+            <div class="current-habits-image">
+                <img src="./fit-stats.jpg" alt="Logo Image">
+            </div>
+            <div class="current-habits-text">
+                <h2>List of Current Habits</h2>
+                <div class="current-habits-list">
+                    <div class="habit1">
+                        <div class="habit-text">
+                            <h3>Habit Name</h3>
+                            <p>Description</p>
+                        </div>
+                        <div class="habit-buttons">
+                            <button class="complete-button">Complete</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                    <div class="habit2">
+                        <div class="habit-text">
+                            <h3>Habit Name</h3>
+                            <p>Description</p>
+                        </div>
+                        <div class="habit-buttons">
+                            <button class="complete-button">Complete</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                    <div class="habit3">
+                    <div class="habit-text">
+                        <h3>Habit Name</h3>
+                        <p>Description</p>
+                    </div>
+                <div class="habit-buttons">
+                    <button class="complete-button">Complete</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+            </div>
+        </div>
+    </main>
