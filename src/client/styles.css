@@ -95,16 +95,16 @@
 
   .heading {
     background-color: transparent;
-    display: flex;
-    flex: 0 0 30%;
+    display: flex;  /* Make .heading-text and .heading-image have their own containers */
+    flex: 0 0 30%;  /* Make the entire heading container 30% of .main-content's container */
     align-items: center;
   }
 
   .heading-text {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 55%;
-    margin: 20px;
+    display: flex;  /* Make each child in .heading-text have its own container */
+    flex-direction: column; /* Make each container in .heading-text stack up vertically */
+    flex: 0 0 60%;  /* Make .heading-text take up 60% of .heading */
+    padding: 20px;  /* Add padding to the container. DO NOT USE MARGIN ELSE THE CONTAINERS WILL NOT BE EVENLY SPLIT 60%/40% */
   }
 
   .heading-text h2 {
@@ -125,19 +125,20 @@
     font-size: 17px;
     line-height: 30px;
     letter-spacing: 0.2px;
-    flex-basis: 100px;
+    flex-basis: 250px;  /* Make the container height 250px large to accommodate for more text */
   }
 
   .heading-image {
-    display: flex;
+    display: flex;  /* Needed in order to use align-items and justify-content */
     flex: 1; /* Flex property to take up remaining space in .heading */
     align-items: center;  /* Align content to the center */
     justify-content: center;  /* Align content to the center */
   }
 
   .heading-image img {
-    width: 75%; /* Image takes up 100% of the container */
+    width: 85%; /* Image takes up 100% of the container */
     height: auto; /* Image height adjusts based on the width */
+    padding: 20px 0; /* DO NOT USE MARGINS */
   }
 
   .heading-buttons {
