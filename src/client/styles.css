@@ -135,14 +135,14 @@
     font-family: "Montserrat-Bold", Helvetica;
     font-weight: 700;
     color: #f2f2f3;
-    font-size: 58px;
+    font-size: 70px;
   } 
 
   .heading-text p {
     font-family: "Montserrat-Regular", Helvetica;
     font-weight: 400;
     color: #d8e1d9;
-    font-size: 17px;
+    font-size: 20px;
     line-height: 30px;
     letter-spacing: 0.2px;
     flex-basis: 250px;  /* Make the container height 250px large to accommodate for more text */
@@ -156,7 +156,7 @@
   }
 
   .heading-image img {
-    width: 85%; /* Image takes up 100% of the container */
+    width: 90%; /* Image takes up 100% of the container */
     height: auto; /* Image height adjusts based on the width */
     padding: 20px 0; /* DO NOT USE MARGINS */
   }
