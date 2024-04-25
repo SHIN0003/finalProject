@@ -121,8 +121,10 @@ input[type="text"] {
 .heading-text {
   display: flex;
   flex-direction: column;
-  flex: 0 0 60%;
+  flex: 0 0 40%;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading-text h2 {
@@ -157,6 +159,7 @@ input[type="text"] {
   width: 85%;
   height: auto;
   padding: 20px 0;
+  border: solid white 3px;
 }
 
 .heading-buttons {
@@ -166,17 +169,18 @@ input[type="text"] {
 }
 
 .tracking-button {
-  align-self: center; 
   padding: 13px 20px;
-  background-color: #3f704d; 
-  color: #fff; 
+  background-color: #3f704d;
+  color: #fff;
   border-radius: 5px;
+  flex: 1;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 22px; 
-  letter-spacing: 0.2px;
+  transition: background-color 0.3s ease;;
+  
+}
+.tracking-button:hover, .progress-button:hover, .join-button:hover {
+    background-color: #2d5736; /* Darker green on hover */
 }
 
 .progress-overview {
@@ -275,7 +279,7 @@ input[type="text"] {
 }
 
 .join-us-text p {
-  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 input[type="email"] {
@@ -486,6 +490,7 @@ input[type="email"]:focus {
   margin-right: 20px;
 }
 
+
 /* Login banner text */
 .join-us-text {
   text-align: center;
@@ -669,6 +674,7 @@ input[type="email"]:focus {
     background-color: #3f704d; 
     color: #fff; 
     border-radius: 5px;
+    flex: 1;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-style: normal;
@@ -1047,4 +1053,17 @@ input[type="password"] {
 
 .join-us-text p a:hover {
   text-decoration: underline;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #404041;
+  color: #fff;
+  padding: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 25px;
 }

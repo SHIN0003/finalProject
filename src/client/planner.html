@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout</title>
     <!-- Add your stylesheet links here -->
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./planner.css">
     <script src="./schedule.js" defer></script>
 </head>
 <body>
@@ -27,32 +27,40 @@
 
     <main class="main-content">
         <!-- Content for your planner goes here -->
-        <h3>Plan your week!</h3>
-            <ul id="scheduleUI">
-                <p id="schedule"></p>
-            </ul>
-        <div class="container">
-            <!-- <form id="form" onsubmit="return false;">
-                <input type="text" placeholder="Activity">
-                <input type="text" placeholder="Duration...">
-                <input type="submit" value="Add" onclick="addWorkout()">
-            </form> -->
-            <input type="text" id="workout-input" placeholder="Activity">
-            <select id = "day">
-                <option value="">Select days...</option>
-                <option value="monday">Monday</option>
-                <option value="tuesday">Tuesday</option>
-                <option value="wednesday">Wednesday</option>
-                <option value="thursday">Thursday</option>
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-                <option value="sunday">Sunday</option>
-                <!-- Add more options as needed -->
-            </select>
-            <button id="add-button">Add</button>
-            <button id="clear-button">Clear</button>
-            <button id="submit-button">Submit Week</button>
-
+        <div class="planner-container">
+            <div class = "planner-text">
+                <h3>Workout Planner</h3>
+                <p>Plan your week with a workout schedule!</p>
+                <input type="text" id="workout-input" placeholder="Activity">
+                <select id = "day">
+                    <option value="">Select days...</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <div class="add-clear-buttons">
+                    <button id="add-button" class="add-button">Add</button>
+                    <button id="clear-button" class="clear-button">Clear</button>
+                </div>
+                <button id="submit-button" class="submit-button">Submit Week</button>
+            </div>
+            <div class="workout-image">
+                <img src="./workout.png" alt="Workout Image">
+            </div>
+        </div>
+        <div class="schedule">
+            <div class="schedule-text">
+                <h3>Weekly Schedule</h3>
+                <p>Here is your weekly workout schedule!</p>
+                <ul id="scheduleUI">
+                    <p id="schedule"></p>
+                </ul>
+            </div>
         </div>
         
     </main>
