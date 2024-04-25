@@ -292,12 +292,17 @@
   .reminder-buttons .Afternoon,
   .reminder-buttons .Evening {
     padding: 10px;
-    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-right: 20px;
+    background-color: #1083c1; /* Green blue color */
+    color: #fff; /* White text color */
+  }
+  
+  .reminder-buttons .Morning:hover, .reminder-buttons .Afternoon:hover, .reminder-buttons .Evening:hover {
+    background-color: #0a5f8f; /* Darker blue on hover */
   }
 
   .reminder-buttons .Evening {
@@ -388,10 +393,37 @@
     margin: 20px;
   }
 
+  .save-button {
+    padding: 13px 20px;
+    background-color: #3f704d; /* Green button color */
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 20px;
+  }
+  .save-button:hover, .complete-button:hover {
+    background-color: #2d5736; /* Darker green on hover */
+  }
+  .cancel-button:hover, .delete-button:hover {
+    background-color: #572d2d; /* Darker green on hover */
+  }
+
+  .cancel-button {
+    padding: 13px 20px;
+    background-color: #d9534f; /* Red button color */
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+
   .save-cancel-buttons .save-button,
   .save-cancel-buttons .cancel-button {
     padding: 12.5px 20px;
-    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -432,6 +464,7 @@
     justify-content: center;
     align-items: center;
     margin: 25px;
+
   }
 
   .current-habits h2 {
@@ -478,6 +511,10 @@
     color: #ffffff;
     font-size: 1rem;
     margin-bottom: 10px;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 400;
+    color: #d8e1d9;
+    font-size: 20px;
   }
 
   .habit-buttons {
@@ -498,8 +535,22 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 5px;
+    padding: 13px 20px;
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 20px;
   }
 
+  .complete-button {
+    background-color: #3f704d; /* Green button color */
+  }
+
+.delete-button {
+    background-color: #d9534f; /* Red button color */
+  }
   .current-habits-image {
     display: flex;
     flex: 1 1 50%;
