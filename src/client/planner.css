@@ -247,7 +247,7 @@
 
 .add-button:hover,
 .clear-button:hover,
-#submit-button:hover {
+.submit-button:hover {
     background-color: #2d5736; /* Darker green on hover */
 }
 

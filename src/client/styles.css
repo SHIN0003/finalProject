@@ -121,8 +121,10 @@ input[type="text"] {
 .heading-text {
   display: flex;
   flex-direction: column;
-  flex: 0 0 60%;
+  flex: 0 0 40%;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading-text h2 {
@@ -157,6 +159,7 @@ input[type="text"] {
   width: 85%;
   height: auto;
   padding: 20px 0;
+  border: solid white 3px;
 }
 
 .heading-buttons {
@@ -170,11 +173,14 @@ input[type="text"] {
   background-color: #3f704d;
   color: #fff;
   border-radius: 5px;
+  flex: 1;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%; /* Full width */
-  margin-top: 10px; /* Add margin */
+  transition: background-color 0.3s ease;;
+  
+}
+.tracking-button:hover, .progress-button:hover, .join-button:hover {
+    background-color: #2d5736; /* Darker green on hover */
 }
 
 .progress-overview {
@@ -484,6 +490,7 @@ input[type="email"]:focus {
   margin-right: 20px;
 }
 
+
 /* Login banner text */
 .join-us-text {
   text-align: center;
@@ -667,6 +674,7 @@ input[type="email"]:focus {
     background-color: #3f704d; 
     color: #fff; 
     border-radius: 5px;
+    flex: 1;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-style: normal;
