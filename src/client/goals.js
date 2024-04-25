@@ -26,3 +26,4 @@ function incrementStreak() {
 }
 document.getElementById('habit-button').addEventListener('click', incrementStreak);
 
+

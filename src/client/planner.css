@@ -1,0 +1,191 @@
+  /* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    body, html {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #404041;
+  }
+
+  /* Header styles */
+  .header {
+    display: flex;  /* Flex container to center content */
+    justify-content: flex-start;  /* Align content to the start */
+    align-items: center;  /* Align content to the start */
+    background-color: #404041; /* Light background, can adjust based on your preference */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Subtle shadow */
+  }
+
+  /* Navigation bar */
+  .navbar {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+
+  /* Logo and title container in nav bar */
+  .title-logo {
+    display: flex;
+    flex: 0 0 30%; /* Make the container take up 30% of the navbar */
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* Habit Forge text in Navigation Bar */
+  .title-logo h1 {
+    font-size: 1.25rem; /* Adjust the font size as needed */
+    color: #ffffff; 
+  }
+
+  /* Logo in Navigation Bar */
+  .title-logo img {
+    height: 80px;
+    margin-right: 25px;
+  }
+
+  /* Navigation bar links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  /* Navigation bar links spacing */
+  .nav-links li {
+    padding: 0 15px;
+    /* margin: 0 10px; */
+  }
+
+  /* Navigation bar link styles */
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff; 
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #8CC63F
+  }
+
+  /* Utility class for flex spacing */
+  .flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links li a.active {
+    color: #8CC63F; /* Or any color that signifies active state */
+    font-weight: bold;
+  }
+    
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Set the height of the container */
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .planner-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .workout-image {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .workout-image img {
+    width: 75%;
+    height: auto;
+    border: solid white 4px;
+    margin-right: 2%;
+  }
+
+  .planner-text {
+    display: flex;
+    flex: 0 0 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 25px; */
+  
+  }
+
+.planner-text h3 {
+    /* width: 542px; */
+    -webkit-text-stroke: 1px #000000; 
+    font-family: "Montserrat-Bold", Helvetica; 
+    font-weight: 700; 
+    color: #f2f2f3; 
+    font-size: 48px; 
+    letter-spacing: 0.2px; 
+    line-height: 80px; 
+    white-space: nowrap;
+}
+
+.planner-text p {
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 400;
+    color: #d8e1d9;
+    font-size: 20px;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+    /* flex: 0 0 90%; */
+}
+
+.schedule-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #404041;
+    color: #fff;
+    padding: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+}
