@@ -515,3 +515,16 @@
     border: solid white 4px;
 
   }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #404041;
+    color: #fff;
+    padding: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+}
