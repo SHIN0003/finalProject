@@ -18,7 +18,7 @@ app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
 
-app.post('/api/submit-week', async (req, res) => {
+app.post('/submit-week', async (req, res) => {
   try {
     const result = await db.put({
       _id: new Date().toISOString(),
@@ -30,7 +30,7 @@ app.post('/api/submit-week', async (req, res) => {
   }
 });
 
-app.get('/api/get-weeks', async (req, res) => {
+app.get('/get-weeks', async (req, res) => {
   try {
     const result = await db.allDocs({ include_docs: true });
     res.status(200).send(result.rows.map(row => row.doc));
