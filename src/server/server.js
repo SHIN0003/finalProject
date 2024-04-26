@@ -18,23 +18,9 @@ app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
 
-app.post('/submit-week', async (req, res) => {
-  try {
-    const result = await db.put({
-      _id: new Date().toISOString(),
-      data: req.body
-    });
-    res.status(201).send(result);
-  } catch (error) {
-    res.status(500).send(error.toString());
-  }
-});
-
-app.get('/get-weeks', async (req, res) => {
-  try {
-    const result = await db.allDocs({ include_docs: true });
-    res.status(200).send(result.rows.map(row => row.doc));
-  } catch (error) {
-    res.status(500).send(error.toString());
-  }
+app.post('/save-habit', (req, res) => {
+  const habit = req.body;
+  db.put(habit).then((response) => {
+    res.json(response);
+  });
 });
