@@ -11,6 +11,24 @@ document.getElementById('minus-btn').addEventListener('click', function() {
     document.getElementById('count').innerHTML = count - 1;
 });
 
+async function saveHabit(habit) {
+    const response = await fetch(`http://localhost:3001/save-habit`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(habit)
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+}
+
+
 document.getElementById('save-btn').addEventListener('click', function() {
     //use backened to save data
     let habitName = document.getElementById('habit-name').value;
@@ -21,15 +39,7 @@ document.getElementById('save-btn').addEventListener('click', function() {
         category,
         count
     };
-    fetch('/save-habit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(habit)
-    }).then((response) => {
-        return response.json();
-    }).then((data) => {
-        console.log(data);
+    saveHabit(habit).then((response) => {
+        console.log(response);
     });
 });
