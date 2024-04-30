@@ -28,6 +28,61 @@ async function saveHabit(habit) {
     return data;
 }
 
+async function completeHabit(id) {
+    const response = await fetch(`http://localhost:3001/complete-habit/${id}`, {
+        method: 'PUT'
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+}
+
+async function deleteHabit(id) {
+    const response = await fetch(`http://localhost:3001/delete-habit/${id}`, {
+        method: 'DELETE'
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+}
+
+async function getHabits() {
+    try {
+        const response = await fetch('http://localhost:3001/get-habits');
+        const habits = await response.json();
+        const container = document.querySelector('.current-habits-list');
+        container.innerHTML = ''; // Clear existing contents
+
+        habits.forEach(habit => {
+            container.innerHTML += `
+                <div class="habit">
+                    <div class="habit-text">
+                        <h3>${habit.habitName}</h3>
+                        <p>${habit.description || 'No description provided'}</p>
+                    </div>
+                    <div class="habit-buttons">
+                        <button class="complete-button" onclick="completeHabit('${habit._id}')">Complete</button>
+                        <button class="delete-button" onclick="deleteHabit('${habit._id}')">Delete</button>
+                    </div>
+                </div>
+            `;
+        });
+    } catch (error) {
+        console.error('Failed to fetch habits:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', getHabits);
+
+
 
 document.getElementById('save-btn').addEventListener('click', function() {
     //use backened to save data

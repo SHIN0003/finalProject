@@ -32,6 +32,50 @@ app.post('/save-habit', (req, res) => {
     });
 });
 
+app.put('/complete-habit/:id', (req, res) => {
+  const id = req.params.id;
+
+  db.get(id)
+    .then(doc => {
+      doc.completed = true;
+      return db.put(doc);
+    })
+    .then(response => {
+      res.json(response);
+    })
+    .catch(error => {
+      console.error('Error completing habit:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    });
+});
+
+app.delete('/delete-habit/:id', (req, res) => {
+  const id = req.params.id;
+
+  db.get(id)
+    .then(doc => {
+      return db.remove(doc);
+    })
+    .then(response => {
+      res.json(response);
+    })
+    .catch(error => {
+      console.error('Error deleting habit:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    });
+});
+
+app.get('/get-habits', (req, res) => {
+  db.allDocs({ include_docs: true })
+    .then(response => {
+      const habits = response.rows.map(row => row.doc);
+      res.json(habits);
+    })
+    .catch(error => {
+      console.error('Error getting habits:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    });
+});
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
