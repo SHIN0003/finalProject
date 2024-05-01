@@ -25,6 +25,10 @@ async function saveHabit(habit) {
     }
 
     const data = await response.json();
+    //refresh the list of habits
+    const container = document.querySelector('.current-habits-list');
+    container.innerHTML = ''; // Clear existing contents
+    getHabits();
     return data;
 }
 
@@ -51,6 +55,9 @@ async function deleteHabit(id) {
     }
 
     const data = await response.json();
+    const container = document.querySelector('.current-habits-list');
+    container.innerHTML = ''; // Clear existing contents
+    getHabits();
     return data;
 }
 
@@ -66,7 +73,7 @@ async function getHabits() {
                 <div class="habit">
                     <div class="habit-text">
                         <h3>${habit.habitName}</h3>
-                        <p>${habit.description || 'No description provided'}</p>
+                        <p>Frequency: ${habit.count || 'No description provided'}</p>
                     </div>
                     <div class="habit-buttons">
                         <button class="complete-button" onclick="completeHabit('${habit._id}')">Complete</button>
@@ -82,10 +89,23 @@ async function getHabits() {
 
 document.addEventListener('DOMContentLoaded', getHabits);
 
-
+document.getElementById('cancel-btn').addEventListener('click', function() {
+    document.getElementById('habit-name').value = '';
+    document.getElementById('category').value = '';
+    document.getElementById('count').innerHTML = 1;
+});
+    
 
 document.getElementById('save-btn').addEventListener('click', function() {
     //use backened to save data
+    if (!document.getElementById('habit-name').value) {
+        alert('Please enter a habit name');
+        return;
+    }
+    if (!document.getElementById('category').value) {
+        alert('Please enter a category');
+        return;
+    }
     let habitName = document.getElementById('habit-name').value;
     let category = document.getElementById('category').value;
     let count = parseInt(document.getElementById('count').innerHTML);
