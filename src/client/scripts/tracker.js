@@ -28,7 +28,7 @@ async function saveHabit(habit) {
     //refresh the list of habits
     const container = document.querySelector('.current-habits-list');
     container.innerHTML = ''; // Clear existing contents
-    getHabits();
+    await getHabits();
     return data;
 }
 
@@ -118,3 +118,5 @@ document.getElementById('save-btn').addEventListener('click', function() {
         console.log(response);
     });
 });
+
+
