@@ -7,6 +7,7 @@
     <!-- Add your stylesheet links here -->
     <link rel="stylesheet" href="./css/tracker.css">
     <script src="./scripts/tracker.js" defer></script>
+    <script src="./streaks.js" defer></script>
 </head>
 <body>
     <!-- Import goal.js -->
@@ -37,7 +38,7 @@
             </div>
             <div class="streaks-image">
                 <img src="./images/fire.png">
-                <p id="streaks-number" class="streaks-number">3</p>
+                <p id="streaks-number" class="streaks-number">0</p>
             </div>
         </div>
         <div class="new-habit">
@@ -77,7 +78,9 @@
             <div class="current-habits-text">
                 <h2>List of Current Habits</h2>
                 <div class="current-habits-list">
-                    
+                <ul id="habitsUI">
+                    <p id="habits-list"></p>
+                </ul>
             </div>
         </div>
     </main>
