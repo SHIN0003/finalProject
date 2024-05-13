@@ -12,76 +12,68 @@ document.getElementById('minus-btn').addEventListener('click', function() {
 });
 
 async function saveHabit(habit) {
-    const response = await fetch(`http://localhost:3001/save-habit`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(habit)
-    });
+    try {
+        const response = await fetch(`http://localhost:3001/save-habit`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(habit)
+        });
 
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Refresh the list of habits after saving
+        await getHabits();
+    } catch (error) {
+        console.error('Failed to save habit:', error);
     }
-
-    const data = await response.json();
-    //refresh the list of habits
-    const container = document.querySelector('.current-habits-list');
-    container.innerHTML = ''; // Clear existing contents
-    await getHabits();
-    return data;
-}
-
-async function completeHabit(id) {
-    const response = await fetch(`http://localhost:3001/complete-habit/${id}`, {
-        method: 'PUT'
-    });
-
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
 }
 
 async function deleteHabit(id) {
-    const response = await fetch(`http://localhost:3001/delete-habit/${id}`, {
-        method: 'DELETE'
-    });
+    try {
+        const response = await fetch(`http://localhost:3001/delete-habit/${id}`, {
+            method: 'DELETE'
+        });
 
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Refresh the list of habits after deletion
+        await getHabits();
+    } catch (error) {
+        console.error('Failed to delete habit:', error);
     }
-
-    const data = await response.json();
-    const container = document.querySelector('.current-habits-list');
-    container.innerHTML = ''; // Clear existing contents
-    getHabits();
-    return data;
 }
 
 async function getHabits() {
     try {
         const response = await fetch('http://localhost:3001/get-habits');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+            }
         const habits = await response.json();
         const container = document.querySelector('.current-habits-list');
         container.innerHTML = ''; // Clear existing contents
 
         habits.forEach(habit => {
-            container.innerHTML += `
-                <div class="habit">
-                    <div class="habit-text">
-                        <h3>${habit.habitName}</h3>
-                        <p>Frequency: ${habit.count || 'No description provided'}</p>
-                    </div>
-                    <div class="habit-buttons">
-                        <button class="complete-button" onclick="completeHabit('${habit._id}')">Complete</button>
-                        <button class="delete-button" onclick="deleteHabit('${habit._id}')">Delete</button>
-                    </div>
+            const habitDiv = document.createElement('div');
+            habitDiv.className = 'habit';
+            habitDiv.innerHTML = `
+                div class="habit-text">
+                    <h3>${habit.habitName}</h3>
+                    <p>Frequency: ${habit.count}</p>
                 </div>
-            `;
-        });
+                <div class="habit-buttons">
+                    <button class="complete-button" onclick="completeHabit('${habit._id}')">Complete</button>
+                    <button class="delete-button" onclick="deleteHabit('${habit._id}')">Delete</button>
+                </div>
+              `;
+              container.appendChild(habitDiv);
+            });
     } catch (error) {
         console.error('Failed to fetch habits:', error);
     }
@@ -94,29 +86,24 @@ document.getElementById('cancel-btn').addEventListener('click', function() {
     document.getElementById('category').value = '';
     document.getElementById('count').innerHTML = 1;
 });
-    
 
-document.getElementById('save-btn').addEventListener('click', function() {
-    //use backened to save data
-    if (!document.getElementById('habit-name').value) {
-        alert('Please enter a habit name');
-        return;
-    }
-    if (!document.getElementById('category').value) {
-        alert('Please enter a category');
-        return;
-    }
+document.getElementById('save-btn').addEventListener('click', async function() {
     let habitName = document.getElementById('habit-name').value;
     let category = document.getElementById('category').value;
-    let count = parseInt(document.getElementById('count').innerHTML);
-    let habit = {
-        habitName,
-        category,
-        count
-    };
-    saveHabit(habit).then((response) => {
-        console.log(response);
-    });
+    let count = parseInt(document.getElementById('count').textContent);
+
+    if (!habitName || !category) {
+        alert('Please enter all fields.');
+        return;
+    }
+
+    let habit = { habitName, category, count };
+
+    try {
+        const response = await saveHabit(habit);
+        console.log('Habit saved:', response);
+        await getHabits(); // Refresh the list
+    } catch (error) {
+        console.error('Failed to save habit:', error);
+    }
 });
-
-
