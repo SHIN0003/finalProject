@@ -1,12 +1,12 @@
+// Initialize weeklySchedule
+let weeklySchedule = {};
+
 // Load the schedule from local storage when the page loads
 window.addEventListener('load', function() {
     let savedSchedule = JSON.parse(localStorage.getItem('weeklySchedule'));
     if (savedSchedule) {
-        let scheduleHTML = '';
-        for (let day in savedSchedule) {
-            scheduleHTML += `<p>${day}: ${savedSchedule[day]}</p>`;
-        }
-        document.getElementById('schedule').innerHTML = scheduleHTML;
+        weeklySchedule = savedSchedule; // Assign saved schedule
+        displaySchedule(); // Display the schedule on the page
     }
 });
 
@@ -25,7 +25,7 @@ function submitSchedule(workoutSchedule) {
             weeklySchedule[day.trim()] = workout.trim();
         }
         updateLocalStorage(); // Update local storage
-        document.getElementById('schedule').innerHTML = workoutSchedule;
+        displaySchedule(); // Display the updated schedule on the page
         alert('Schedule submitted successfully.');
     } else {
         alert('Please enter a valid schedule.');
@@ -36,12 +36,21 @@ document.getElementById('submit-button').addEventListener('click', function() {
     submitSchedule(document.getElementById('schedule').innerHTML);
 });
 
+// Function to display the schedule on the page
+function displaySchedule() {
+    let scheduleHTML = '';
+    for (let day in weeklySchedule) {
+        scheduleHTML += `<p>${day}: ${weeklySchedule[day]}</p>`;
+    }
+    document.getElementById('schedule').innerHTML = scheduleHTML;
+}
+
 // Function to add a workout
 function addWorkout(day, workout) {
     if (day && workout) {
         weeklySchedule[day] = workout;
         updateLocalStorage(); // Update local storage
-        document.getElementById('schedule').innerHTML += `<p>${day}: ${workout}</p>`;
+        displaySchedule(); // Display the updated schedule on the page
         document.getElementById('day').value = '';
         document.getElementById('workout-input').value = '';
     } else {
