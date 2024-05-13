@@ -1,16 +1,7 @@
-document.getElementById('plus-btn').addEventListener('click', function() {
-    let count = parseInt(document.getElementById('count').innerHTML);
-    document.getElementById('count').innerHTML = count + 1;
-});
+// Initialize PouchDB
+const db = new PouchDB('habits');
 
-document.getElementById('minus-btn').addEventListener('click', function() {
-    let count = parseInt(document.getElementById('count').innerHTML);
-    if (count === 1) {
-        return;
-    }
-    document.getElementById('count').innerHTML = count - 1;
-});
-
+// Function to save a habit
 async function saveHabit(habit) {
     try {
         const response = await fetch(`http://localhost:3001/save-habit`, {
@@ -32,6 +23,7 @@ async function saveHabit(habit) {
     }
 }
 
+// Function to delete a habit
 async function deleteHabit(id) {
     try {
         const response = await fetch(`http://localhost:3001/delete-habit/${id}`, {
@@ -49,12 +41,13 @@ async function deleteHabit(id) {
     }
 }
 
+// Function to fetch habits from the server
 async function getHabits() {
     try {
         const response = await fetch('http://localhost:3001/get-habits');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
-            }
+        }
         const habits = await response.json();
         const container = document.querySelector('.current-habits-list');
         container.innerHTML = ''; // Clear existing contents
@@ -63,7 +56,7 @@ async function getHabits() {
             const habitDiv = document.createElement('div');
             habitDiv.className = 'habit';
             habitDiv.innerHTML = `
-                div class="habit-text">
+                <div class="habit-text">
                     <h3>${habit.habitName}</h3>
                     <p>Frequency: ${habit.count}</p>
                 </div>
@@ -72,38 +65,70 @@ async function getHabits() {
                     <button class="delete-button" onclick="deleteHabit('${habit._id}')">Delete</button>
                 </div>
               `;
-              container.appendChild(habitDiv);
-            });
+            container.appendChild(habitDiv);
+        });
     } catch (error) {
         console.error('Failed to fetch habits:', error);
     }
 }
 
-document.addEventListener('DOMContentLoaded', getHabits);
+// Function to handle saving a habit
+function handleSaveHabit() {
+    const habitName = document.getElementById('habit-name').value;
+    const category = document.getElementById('category').value;
+    const frequency = parseInt(document.getElementById('count').innerText);
 
-document.getElementById('cancel-btn').addEventListener('click', function() {
-    document.getElementById('habit-name').value = '';
-    document.getElementById('category').value = '';
-    document.getElementById('count').innerHTML = 1;
-});
+    const habit = {
+        _id: new Date().toISOString(),
+        name: habitName,
+        category: category,
+        frequency: frequency,
+        completed: 0 // Initialize completed count to 0
+    };
 
-document.getElementById('save-btn').addEventListener('click', async function() {
-    let habitName = document.getElementById('habit-name').value;
-    let category = document.getElementById('category').value;
-    let count = parseInt(document.getElementById('count').textContent);
+    saveHabit(habit)
+        .then(() => {
+            // Update UI to display the saved habit
+            displayHabit(habit);
+        })
+        .catch(error => {
+            console.error('Error saving habit:', error);
+        });
+}
 
-    if (!habitName || !category) {
-        alert('Please enter all fields.');
-        return;
-    }
+// Function to display a habit in the UI
+function displayHabit(habit) {
+    const habitsList = document.getElementById('habitsUI');
+    const habitItem = document.createElement('li');
+    habitItem.textContent = habit.name;
+    habitsList.appendChild(habitItem);
+}
 
-    let habit = { habitName, category, count };
+// Function to handle completing a habit
+function completeHabit(habitId) {
+    // Update streaks locally
+    incrementStreak();
 
-    try {
-        const response = await saveHabit(habit);
-        console.log('Habit saved:', response);
-        await getHabits(); // Refresh the list
-    } catch (error) {
-        console.error('Failed to save habit:', error);
-    }
-});
+    // Update habit completion on server
+    // You can add code to make a request to update completion status on the server
+}
+
+// Function to handle deleting a habit
+function handleDeleteHabit(habitId) {
+    deleteHabit(habitId)
+        .then(() => {
+            // Update UI to remove the deleted habit
+        })
+        .catch(error => {
+            console.error('Error deleting habit:', error);
+        });
+}
+
+// Function to initialize event listeners
+function initialize() {
+    document.getElementById('save-btn').addEventListener('click', handleSaveHabit);
+    // Add event listeners for completing and deleting habits dynamically as they are displayed
+}
+
+// Call the initialize function to set up event listeners when the DOM is ready
+document.addEventListener('DOMContentLoaded', initialize);

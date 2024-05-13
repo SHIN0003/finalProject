@@ -7,12 +7,10 @@
     <!-- Stylesheet links here -->
     <link rel="stylesheet" href="./css/tracker.css">
     <script src="./scripts/tracker.js" defer></script>
-    <script src="./streaks.js" defer></script>
+    <script src="./scripts/goals.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
 </head>
 <body>
-    <!-- Import goal.js -->
-    <script src="./scripts/goals.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
     <header class="header">
         <div class="title-logo">
             <img src="./images/Habit.png" alt="HabitForge Logo">
@@ -22,7 +20,7 @@
             <ul class="nav-links">
                 <!-- Navigation links go here -->
                 <li><a href="/index">Home</a></li>
-                <li><a href="/" class="active">Habits</a></li>
+                <li><a href="/tracker" class="active">Habits</a></li>
                  <li><a href="/planner">Workout</a></li>
                 <li><a href="/about">About</a></li>
             </ul>
@@ -47,10 +45,10 @@
                 <input type="habit-name" placeholder="Enter Habit Name" id="habit-name">
                 <select name="category" id="category">
                     <option value="" disabled selected>Select a category</option>
-                    <option value="category">Fitness</option>
-                    <option value="category">Health</option>
-                    <option value="category">Productivity</option>
-                    <option value="category">Self-care</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Health">Health</option>
+                    <option value="Productivity">Productivity</option>
+                    <option value="Self-care">Self-care</option>
                 </select>
                 <div class="frequency-bar">
                     <h3>Frequency</h3>
