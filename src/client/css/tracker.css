@@ -423,7 +423,7 @@
 
 
   .save-cancel-buttons .save-button,
-  .save-cancel-buttons .cancel-button{
+  .save-cancel-buttons .cancel-button, .button-container{
     padding: 12.5px 20px;
     border: none;
     border-radius: 5px;
