@@ -384,8 +384,7 @@
   .slider.round:before {
     border-radius: 50%;
   }
-
- .save-cancel-buttons {
+  .save-cancel-buttons {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -421,8 +420,10 @@
   }
 
 
+
+
   .save-cancel-buttons .save-button,
-  .save-cancel-buttons .cancel-button {
+  .save-cancel-buttons .cancel-button{
     padding: 12.5px 20px;
     border: none;
     border-radius: 5px;
@@ -479,7 +480,6 @@
     flex-direction: column;
     justify-content: center;
   }
-
   .habit1,
   .habit2,
   .habit3 {
