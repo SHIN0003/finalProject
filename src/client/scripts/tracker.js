@@ -91,6 +91,18 @@ function handleSaveHabit() {
         .then(() => {
             // Update UI to display the saved habit
             displayHabit(habit);
+            // Increment streak after saving the habit
+            incrementStreak();
+        })
+        .catch(error => {
+            console.error('Error saving habit:', error);
+        });
+}
+
+    saveHabit(habit)
+        .then(() => {
+            // Update UI to display the saved habit
+            displayHabit(habit);
         })
         .catch(error => {
             console.error('Error saving habit:', error);
