@@ -97,12 +97,22 @@ function handleSaveHabit() {
         });
 }
 
-// Function to increment the streaks number
-function incrementStreak() {
-    let streaksNumber = document.getElementById('streaks-number');
-    let currentStreak = parseInt(streaksNumber.textContent);
-    currentStreak++; // Increment the streaks number
-    streaksNumber.textContent = currentStreak;
+// Function to decrement the frequency of a habit
+function decrementFrequency() {
+    const countElement = document.getElementById('count');
+    let currentCount = parseInt(countElement.textContent);
+    if (currentCount > 1) { // Ensure count doesn't go below 1
+        currentCount--; // Decrement the frequency count
+        countElement.textContent = currentCount;
+    }
+}
+
+// Function to increment the frequency of a habit
+function incrementFrequency() {
+    const countElement = document.getElementById('count');
+    let currentCount = parseInt(countElement.textContent);
+    currentCount++; // Increment the frequency count
+    countElement.textContent = currentCount;
 }
 
 // Function to display a habit in the UI
@@ -131,6 +141,8 @@ function handleDeleteHabit(habitId) {
 // Function to initialize event listeners
 function initialize() {
     document.getElementById('save-btn').addEventListener('click', handleSaveHabit);
+    document.getElementById('plus-btn').addEventListener('click', incrementFrequency);
+    document.getElementById('minus-btn').addEventListener('click', decrementFrequency);
     getHabits(); // Fetch habits when the page loads
 }
 
