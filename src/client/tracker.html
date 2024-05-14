@@ -21,7 +21,7 @@
                 <!-- Navigation links go here -->
                 <li><a href="/index">Home</a></li>
                 <li><a href="/tracker" class="active">Habits</a></li>
-                 <li><a href="/planner">Workout</a></li>
+                <li><a href="/planner">Workout</a></li>
                 <li><a href="/about">About</a></li>
             </ul>
         </nav>
@@ -76,15 +76,18 @@
             <div class="current-habits-text">
                 <h2>List of Current Habits</h2>
                 <div class="current-habits-list">
-                <ul id="habitsUI">
-                    <p id="habits-list"></p>
-                </ul>
+                    <ul id="habitsUI">
+                        <p id="habits-list"></p>
+                    </ul>
+                </div>
             </div>
         </div>
+        <button id="delete-last-habit-btn">Delete Last Habit</button>
+        <button class="complete-button" onclick="completeHabit('${habit._id}')">Complete</button>
     </main>
     <footer class="footer">
         <!-- Footer content -->
         <p>&copy; 2024 HabitForge. All rights reserved.</p>
     </footer>
 </body>
-    </html>
+</html>

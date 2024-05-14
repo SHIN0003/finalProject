@@ -138,11 +138,42 @@ function handleDeleteHabit(habitId) {
         });
 }
 
+// Function to handle completing a habit
+function completeHabit(habitId) {
+    // Increase streaks counter by 1
+    const streaksCounter = document.getElementById('streaks-number');
+    streaksCounter.textContent = parseInt(streaksCounter.textContent) + 1;
+
+    // You can implement additional logic here, such as updating completed count in the database
+
+    // For demonstration, let's just log that the habit was completed
+    console.log(`Habit ${habitId} completed!`);
+}
+
+// Function to handle deleting the last habit in the list
+function deleteLastHabit() {
+    const habitsList = document.getElementById('habitsUI');
+    const lastHabit = habitsList.lastElementChild;
+    if (lastHabit) {
+        const habitId = lastHabit.id;
+        deleteHabit(habitId)
+            .then(() => {
+                lastHabit.remove();
+            })
+            .catch(error => {
+                console.error('Error deleting habit:', error);
+            });
+    } else {
+        console.log('No habits to delete.');
+    }
+}
+
 // Function to initialize event listeners
 function initialize() {
     document.getElementById('save-btn').addEventListener('click', handleSaveHabit);
     document.getElementById('plus-btn').addEventListener('click', incrementFrequency);
     document.getElementById('minus-btn').addEventListener('click', decrementFrequency);
+    document.getElementById('delete-last-habit-btn').addEventListener('click', deleteLastHabit);
     getHabits(); // Fetch habits when the page loads
 }
 
