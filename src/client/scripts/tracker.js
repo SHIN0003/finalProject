@@ -95,7 +95,7 @@ function handleSaveHabit() {
         .catch(error => {
             console.error('Error saving habit:', error);
         });
-
+}
 
 // Function to increment the streaks number
 function incrementStreak() {
